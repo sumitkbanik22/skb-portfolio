@@ -1,0 +1,56 @@
+// === Colors ===
+$primary: #7c3aed;
+$primary-light: #a78bfa;
+$primary-dark: #6d28d9;
+$accent: #06b6d4;
+$accent-light: #22d3ee;
+$accent-dark: #0891b2;
+
+$surface: #0a0a0f;
+$surface-light: #12121a;
+$surface-lighter: #1e1e2e;
+
+$text-primary: #f0f0f8;
+$text-secondary: #a0a0b8;
+$text-muted: #5a5a72;
+
+$green: #10b981;
+$green-light: #34d399;
+$red: #f43f5e;
+$yellow: #f59e0b;
+
+$white-5: rgba(255, 255, 255, 0.05);
+$white-10: rgba(255, 255, 255, 0.1);
+$white-20: rgba(255, 255, 255, 0.2);
+
+// === Typography ===
+$font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+$font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+// === Breakpoints (mobile-first) ===
+$bp-sm: 640px;
+$bp-md: 768px;
+$bp-lg: 1024px;
+$bp-xl: 1280px;
+
+// === Spacing ===
+$max-width: 1152px;
+$section-px: 1rem;
+$section-px-sm: 1.5rem;
+$section-px-lg: 2rem;
+$section-py: 5rem;
+$section-py-sm: 7rem;
+$section-py-lg: 8rem;
+
+// === Transitions ===
+$transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+$transition-base: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+$transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+
+// === Border Radius ===
+$radius-sm: 0.5rem;
+$radius-md: 0.75rem;
+$radius-lg: 1rem;
+$radius-xl: 1.25rem;
+$radius-2xl: 1.5rem;
+$radius-full: 9999px;

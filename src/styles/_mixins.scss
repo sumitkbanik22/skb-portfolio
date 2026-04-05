@@ -1,0 +1,103 @@
+@use 'variables' as *;
+
+// === Responsive breakpoints (mobile-first) ===
+@mixin sm { @media (min-width: $bp-sm) { @content; } }
+@mixin md { @media (min-width: $bp-md) { @content; } }
+@mixin lg { @media (min-width: $bp-lg) { @content; } }
+@mixin xl { @media (min-width: $bp-xl) { @content; } }
+
+// === Layout ===
+@mixin container {
+  max-width: $max-width;
+  margin-inline: auto;
+  padding-inline: $section-px;
+  @include sm { padding-inline: $section-px-sm; }
+  @include lg { padding-inline: $section-px-lg; }
+}
+
+@mixin section-padding {
+  padding-block: $section-py;
+  @include sm { padding-block: $section-py-sm; }
+  @include lg { padding-block: $section-py-lg; }
+}
+
+// === Gradient text ===
+@mixin gradient-text($from: $primary-light, $to: $accent-light) {
+  background: linear-gradient(135deg, $from, $to);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+// === Glass card ===
+@mixin glass-card {
+  background: rgba($surface-light, 0.6);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: $radius-2xl;
+  transition: border-color $transition-base, transform $transition-base, box-shadow $transition-base;
+  &:hover {
+    border-color: rgba($primary, 0.25);
+    box-shadow: 0 8px 32px rgba($primary, 0.08);
+  }
+}
+
+// === Glow effect ===
+@mixin glow($color: $primary, $size: 120px) {
+  position: absolute;
+  width: $size;
+  height: $size;
+  background: rgba($color, 0.15);
+  border-radius: 50%;
+  filter: blur($size);
+  pointer-events: none;
+}
+
+// === Section divider line ===
+@mixin section-divider($color: $primary) {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba($color, 0.3), transparent);
+}
+
+// === Button base ===
+@mixin btn-base {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  border-radius: $radius-full;
+  transition: all $transition-base;
+  cursor: pointer;
+  text-decoration: none;
+  border: none;
+  font-family: $font-sans;
+  position: relative;
+}
+
+@mixin btn-primary {
+  @include btn-base;
+  background: linear-gradient(135deg, $primary, $accent-dark);
+  color: white;
+  &:hover {
+    box-shadow: 0 0 20px rgba($primary, 0.4), 0 0 60px rgba($primary, 0.15);
+    transform: translateY(-2px);
+  }
+  &:active { transform: translateY(0); }
+}
+
+@mixin btn-outline {
+  @include btn-base;
+  background: transparent;
+  color: $text-primary;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  &:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba($primary-light, 0.4);
+    box-shadow: 0 0 20px rgba($primary, 0.1);
+  }
+}
